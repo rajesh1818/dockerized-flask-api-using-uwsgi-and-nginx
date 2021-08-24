@@ -1,0 +1,28 @@
+version: "3.2"
+
+services:
+
+  flask:
+    build: ./myproject
+    container_name: myproject
+
+    volumes:
+      - ./myproject:/myproject
+
+    restart: always
+    expose:
+      - "8080"
+    image: rajeshjethwa1818/flask
+
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx:/nginx
+    image: rajeshjethwa1818/nginx
