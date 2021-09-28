@@ -33,7 +33,7 @@ class login(Resource):
             return jsonify(error="incorrect password")
 
 
-        tokenBody = {"email": email, "isadmin": isAdmin,"password":password}
+        tokenBody = {"email": email, "isadmin": isAdmin}
 
         access_token = create_access_token(identity=tokenBody)
 
